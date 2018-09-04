@@ -1,0 +1,493 @@
+@w: 120px;
+@import url(./cdj.less);
+.d3(@arguments) {
+	perspective: @arguments;
+	transform-style: preserve-3d;
+}
+// 沙滩道路
+#beach-ground {
+  	position: absolute;
+  	width: 100%;
+	background-color: #FBDEBB;
+	height: 90%;
+	top: 70%;
+	z-index: 20;
+}
+// 沙滩表面
+#beach-surface {
+	position: absolute;
+	width: 100%;
+	height: 116px;
+	top: -40px;
+	background-image: url(../img/part5/beach-surface.png);
+	background-size: cover;
+}
+// 沙滩上的伞和凳子
+#beach-bg {
+	position: absolute;
+	width: 500px;
+	height: 259px;
+	background-image: url(../img/part5/part5.png);
+	background-position: 0 -235px;
+	left: 50%;
+	margin-left: -250px;
+	bottom: 97%;
+}
+//海
+#beach-sea {
+  	position: absolute;
+  	width: 100%;
+	background-color: #67cbeb;
+	height: 30%;
+	bottom: 30%;
+}
+// 波浪
+#beach-bl {
+	width: 80%;
+	height: 50%;
+	margin: 0 auto;
+	background-image: url(../img/part5/beach-bl.png);
+	background-size: 100% 100%;
+}
+.boat {
+    position: absolute;
+    width: 200px;
+    left: -200px;
+    background-image: url(../img/part5/boats.png);
+    &.left {
+    animation-name: moveL;
+  }
+  &.right {
+    animation-name: moveR;
+  }
+  // 上道路
+  &.bl1 {
+    bottom: 85%;
+    z-index: 8;
+  }
+  &.bl2 {
+    bottom: 84%;
+    z-index: 7;
+  }
+  &.bl3 {
+    bottom: 83%;
+    z-index: 6;
+  }
+  &.bl4 {
+    bottom: 82%;
+    z-index: 5;
+  }
+  &.bl5 {
+    bottom: 81%;
+    z-index: 4;
+  }
+  &.bl6 {
+    bottom: 80%;
+    z-index: 3;
+  }
+  &.bl7 {
+    bottom: 79%;
+    z-index: 2;
+  }
+  &.bl8 {
+    bottom: 78%;
+    z-index: 1;
+  }
+  // 下道路
+  &.br1 {
+    bottom: 50%;
+    z-index: 18;
+  }
+  &.br2 {
+    bottom: 45%;
+    z-index: 17;
+  }
+  &.br3 {
+    bottom: 40%;
+    z-index: 16;
+  }
+  &.br4 {
+    bottom: 38%;
+    z-index: 15;
+  }
+  &.br5 {
+    bottom: 35%;
+    z-index: 14;
+  }
+  &.br6 {
+    bottom: 30%;
+    z-index: 13;
+  }
+  &.br7 {
+    bottom: 25%;
+    z-index: 12;
+  }
+  &.br8 {
+    bottom: 20%;
+    z-index: 11;
+  }
+  &.br9 {
+    bottom: 79%;
+    z-index: 10;
+  }
+  // 时间
+  &.t1 {
+    animation-duration: 1s;
+  }
+  &.t2 {
+    animation-duration: 2s;
+  }
+  &.t3 {
+    animation-duration: 3s;
+  }
+  &.t4 {
+    animation-duration: 4s;
+  }
+  &.t5 {
+    animation-duration: 5s;
+  }
+  &.t6 {
+    animation-duration: 6s;
+  }
+  &.t7 {
+    animation-duration: 7s;
+  }
+  &.t8 {
+    animation-duration: 8s;
+  }
+}
+// 每一条船对用的高度和背景位置
+#b1 {
+    height: 168px;
+    background-position: 0 0;
+}
+#b2 {
+	height: 199px;
+	background-position: -200px 0;
+}
+#b3 {
+	height: 139px;
+	background-position: 0 -168px;
+}
+#b4 {
+	height: 117px;
+	background-position: -200px -199px;
+}
+#b5 {
+	height: 74px;
+	background-position: 0 -307px;
+}
+#b6 {
+	height: 96px;
+	background-position: -200px -316px;
+}
+#b7 {
+	height: 138px;
+	background-position: 0 -390px;
+}
+#b8 {
+	height: 131px;
+	background-position: -200px -412px;
+}
+//盒子
+#contact-box {
+	position: absolute;
+	width: 1200px;
+	height: @w;
+	left: 50%;
+	margin-left: -600px;
+	bottom: 10%;
+	z-index: 21;
+}
+.contact-item {
+	position: relative;
+	float: left;
+	width: @w;
+	height: 100%;
+	padding: 0 60px;
+	.tf(translateY(-400%));
+	opacity: 0;
+	&.ac {
+		opacity: 1;
+		.tf(translateY(0));
+	}
+	// 鼠标移入，箱子打开
+	&:hover .contact-info {
+		top: -270px;
+		opacity: 1;
+		.tf(scale(1));
+	}
+	&:hover .top-side-left {
+		.tf(rotateY(-140deg));
+	}
+	&:hover .top-side-right {
+		.tf(rotateY(140deg));
+	}
+	&:nth-of-type(1) {
+		.ts(1.5s .5s);
+	}
+	&:nth-of-type(2) {
+		.ts(1.5s .6s);
+	}
+	&:nth-of-type(3) {
+		.ts(1.5s .7s);
+	}
+	&:nth-of-type(4) {
+		.ts(1.5s .8s);
+	}
+	&:nth-of-type(5) {
+		.ts(1.5s .9s);
+	}
+}
+// 方块
+.cube {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+	.d3(3000px);
+	&:nth-of-type(1) {
+		transition-delay: .5s
+	}
+	&:nth-of-type(2) {
+		transition-delay: .6s
+	}
+	&:nth-of-type(3) {
+		transition-delay: .7s
+	}
+	&:nth-of-type(4) {
+		transition-delay: .8s
+	}
+	&:nth-of-type(5) {
+		transition-delay: .9s
+	}
+	.side {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		border: 1px solid #d4bba9;
+		.origin(center center -@w/2);
+		.ts(0.5s);
+	}
+
+	.front-side {
+		background-color: #dfb07a;
+		background-repeat: no-repeat;
+	}
+	.contact-icon {
+		position: absolute;
+		height: 44px;
+		background-image: url(../img/part5/contact.png);
+	}
+	&.ac .front-side{
+		.tf(rotateX(-15deg) rotateY(-40deg));
+	}
+
+	.left-side {
+		background-color: #bf8a59;
+	}
+	&.ac .left-side{
+		.tf(rotateX(-15deg) rotateY(-130deg));
+	}
+
+	.right-side {
+		text-align: center;
+		font-size: 1.5vw;
+		color: #fff;
+		line-height: @w;
+		background-color: #c99968;
+	}
+	&.ac .right-side{
+		.tf(rotateX(-15deg) rotateY(50deg));
+	}
+
+	.back-side {
+		background-color: #d5a370;
+	}
+	&.ac .back-side{
+		.tf(rotateX(-15deg) rotateY(-40deg) translateZ(-@w));
+	}
+	.top-side {
+		.d3(8000px);
+		span {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			top: 0;
+			background-color: #d8a975;
+			.ts(0.5s);
+		}
+		.top-side-left {
+			left: 0;
+			.origin(left);
+		}
+		.top-side-right {
+			right: 0;
+			.origin(right);
+		}
+	}
+	&.ac .top-side{
+		.tf(rotateX(-15deg) rotateY(-40deg) rotateX(90deg));
+	}
+}
+// 展示信息
+.contact-info {
+	position: absolute;
+	height: 150px;
+	top: -50px;
+	background-color: #fcc380;
+	border: 15px solid #fcc380;
+	background-image: url(../img/part5/contact.png);
+	opacity: 0;
+	.ts(0.5s);
+	.tf(scale(0));
+	.toggle {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border: 20px solid transparent;
+		border-top: 20px solid #fcc380;
+		bottom: -55px;
+		left: 50%;
+		margin-left: -20px;
+	}
+}
+#wechat .contact-icon {
+	width: 44px;
+	left: 40px;
+	top: 36px;
+	background-position: -196px -194px;
+}
+#wechat .contact-info {
+	width: 150px;
+	left: 35px;
+}
+#qq .contact-icon {
+	width: 44px;
+	left: 40px;
+	top: 36px;
+	background-position: -196px -150px;
+}
+#qq .contact-info {
+	width: 126px;
+	background-position: -150px 0;
+	left: 45px;
+}
+#mobile .contact-icon {
+	width: 44px;
+	background-position: -196px -238px;
+	left: 40px;
+	top: 36px;
+}
+#mobile .contact-info {
+	background: #fcc380;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	left: 30px;
+	color: #fff;
+	letter-spacing: 2px;
+	text-align: center;
+	font-size: 16px;
+}
+#mobile .contact-info:after {
+	content: '166-0231-5767';
+}
+#me1 .contact-info {
+	width: 83px;
+	background-position: 0 -150px;
+	left: 60px;
+}
+#me2 .contact-info {
+	width: 86px;
+	background-position: -88px -150px;
+	left: 60px;
+}
+//飞机
+#plane-box {
+	position: absolute;
+	width: 361px;
+	height: 216px;
+	top: 3%;
+	left: -500px;
+	.ts(2s linear);
+	.d3(2000px);
+	&.ac {
+		.tf(translateX(130vw));
+	}
+}
+#plane {
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/part5/part5.png);
+	background-position: 0 -4px;
+}
+.pro {
+	position: absolute;
+	width: 260px;
+	height: 3px;
+	background-image: url(../img/part5/part5.png);
+	animation: proRtate 0.2s linear infinite;
+}
+#pro1 {
+	left: -100px;
+	top: 0;
+}
+#pro2 {
+	left: 159px;
+	top: 35px;
+}
+@keyframes proRtate {
+	100% {
+		transform: rotateY(360deg);
+	}
+}
+#manBox5 {
+	left: 3%;
+	bottom: 8%;
+	.ts(1.2s .28s);
+	.tf(translateY(-200%));
+	opacity: 0;
+	z-index: 50;
+	&.ac {
+		opacity: 1;
+		.tf(translateY(0));
+	}
+	.man {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
+// 降落伞
+.parachute {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	background-image: url(../img/part5/part5.png);
+	background-position: -361px 0;
+	left: 15px;
+	top: -197px;
+	.ts(0.5s);
+    &.hide {
+    	opacity: 0;
+    }
+}
+#parachute {
+    left: -10px;
+    top: -150px;
+}
+.beian {
+	z-index: 20;
+	font-size: 16px;
+	position: absolute;
+	width: 100%;
+	color: #000;
+	bottom: 10px;
+	text-align: center;
+	a {
+		color: #000;
+	}
+}
