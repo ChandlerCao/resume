@@ -1,444 +1,525 @@
 @import url(./cdj.less);
+
 /*旋转*/
 .rotate(@arguments) {
     animation: rotate @arguments linear infinite;
 }
+
 .shake(@arguments) {
     animation: shake @arguments linear infinite alternate;
 }
+
 #pageFirst {
-  background-color: #000;
-  visibility: hidden;
-  .ts(1s linear);
-  &.show {
-    visibility: visible;
-  }
-  &.light {
-    background-color: #45c9ff;
-  }
+    background-color: #000;
+    visibility: hidden;
+    .ts(1s linear);
+
+    &.show {
+        visibility: visible;
+    }
+
+    &.light {
+        background-color: #45c9ff;
+    }
 }
 
 //街边房子
 #house {
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  background: url(../img/part1/house.gif);
-  background-size: auto 100%;
-  bottom: 28.8%;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url(../img/part1/house.gif);
+    background-size: auto 100%;
+    bottom: 28.8%;
 }
+
 //公路
-#high-way { 
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  top: 70%;
-  background-color: #868994;
+#high-way {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 70%;
+    background-color: #868994;
 }
+
 //人行道
 #sidewalk {
-  position: absolute;
-  width: 100%;
-  height: 2%;
-  top: 0;
-  background: -webkit-repeating-linear-gradient(left, rgb(184, 186 ,188) 0, rgb(184, 186 ,188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
-  background: -moz-repeating-linear-gradient(left, rgb(184, 186 ,188) 0, rgb(184, 186 ,188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
-  background: -o-repeating-linear-gradient(left, rgb(184, 186 ,188) 0, rgb(184, 186 ,188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
-  background: -ms-repeating-linear-gradient(left, rgb(184, 186 ,188) 0, rgb(184, 186 ,188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
+    position: absolute;
+    width: 100%;
+    height: 2%;
+    top: 0;
+    background: -webkit-repeating-linear-gradient(left, rgb(184, 186, 188) 0, rgb(184, 186, 188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
+    background: -moz-repeating-linear-gradient(left, rgb(184, 186, 188) 0, rgb(184, 186, 188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
+    background: -o-repeating-linear-gradient(left, rgb(184, 186, 188) 0, rgb(184, 186, 188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
+    background: -ms-repeating-linear-gradient(left, rgb(184, 186, 188) 0, rgb(184, 186, 188) 100px, rgb(35, 31, 32) 100px, rgb(35, 31, 32) 102px);
 }
+
 //道路分界线
 #boundary {
-  position: absolute;
-  width: 100%;
-  height: 2.5%;
-  top: 15%;
-  background: -webkit-repeating-linear-gradient(left, rgb(255, 255 ,255) 0, rgb(255, 255 ,255) 100px, transparent 100px, transparent 150px);
-  background: -o-repeating-linear-gradient(left, rgb(255, 255 ,255) 0, rgb(255, 255 ,255) 100px, transparent 100px, transparent 150px);
-  background: -moz-repeating-linear-gradient(left, rgb(255, 255 ,255) 0, rgb(255, 255 ,255) 100px, transparent 100px, transparent 150px);
-  background: -ms-repeating-linear-gradient(left, rgb(255, 255 ,255) 0, rgb(255, 255 ,255) 100px, transparent 100px, transparent 150px);
+    position: absolute;
+    width: 100%;
+    height: 2.5%;
+    top: 15%;
+    background: -webkit-repeating-linear-gradient(left, rgb(255, 255, 255) 0, rgb(255, 255, 255) 100px, transparent 100px, transparent 150px);
+    background: -o-repeating-linear-gradient(left, rgb(255, 255, 255) 0, rgb(255, 255, 255) 100px, transparent 100px, transparent 150px);
+    background: -moz-repeating-linear-gradient(left, rgb(255, 255, 255) 0, rgb(255, 255, 255) 100px, transparent 100px, transparent 150px);
+    background: -ms-repeating-linear-gradient(left, rgb(255, 255, 255) 0, rgb(255, 255, 255) 100px, transparent 100px, transparent 150px);
 }
+
 .car {
-  position: absolute;
-  width: 300px;
-  left: -350px;
-  animation-timing-function: linear;
-  cursor: pointer;
-  &:hover {
-    animation-play-state: paused;
-  }
-  &.left {
-    animation-name: moveL;
-  }
-  &.right {
-    animation-name: moveR;
-  }
-  // 上道路
-  &.bl1 {
-    bottom: 91%;
-    z-index: 8;
-  }
-  &.bl2 {
-    bottom: 92%;
-    z-index: 7;
-  }
-  &.bl3 {
-    bottom: 93%;
-    z-index: 6;
-  }
-  &.bl4 {
-    bottom: 94%;
-    z-index: 5;
-  }
-  &.bl5 {
-    bottom: 95%;
-    z-index: 4;
-  }
-  &.bl6 {
-    bottom: 96%;
-    z-index: 3;
-  }
-  &.bl7 {
-    bottom: 97%;
-    z-index: 2;
-  }
-  &.bl8 {
-    bottom: 98%;
-    z-index: 1;
-  }
-  // 下道路
-  &.br1 {
-    bottom: 71%;
-    z-index: 18;
-  }
-  &.br2 {
-    bottom: 72%;
-    z-index: 17;
-  }
-  &.br3 {
-    bottom: 73%;
-    z-index: 16;
-  }
-  &.br4 {
-    bottom: 74%;
-    z-index: 15;
-  }
-  &.br5 {
-    bottom: 75%;
-    z-index: 14;
-  }
-  &.br6 {
-    bottom: 76%;
-    z-index: 13;
-  }
-  &.br7 {
-    bottom: 77%;
-    z-index: 12;
-  }
-  &.br8 {
-    bottom: 78%;
-    z-index: 11;
-  }
-  &.br9 {
-    bottom: 79%;
-    z-index: 10;
-  }
-  // 时间
-  &.t1 {
-    animation-duration: 1s;
-  }
-  &.t2 {
-    animation-duration: 2s;
-  }
-  &.t3 {
-    animation-duration: 3s;
-  }
-  &.t4 {
-    animation-duration: 4s;
-  }
-  &.t5 {
-    animation-duration: 5s;
-  }
-  &.t6 {
-    animation-duration: 6s;
-  }
-  &.t7 {
-    animation-duration: 7s;
-  }
-  &.t8 {
-    animation-duration: 8s;
-  }
+    position: absolute;
+    width: 300px;
+    left: -350px;
+    animation-timing-function: linear;
+    cursor: pointer;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+
+    &.left {
+        animation-name: moveL;
+    }
+
+    &.right {
+        animation-name: moveR;
+    }
+
+    // 上道路
+    &.bl1 {
+        bottom: 91%;
+        z-index: 8;
+    }
+
+    &.bl2 {
+        bottom: 92%;
+        z-index: 7;
+    }
+
+    &.bl3 {
+        bottom: 93%;
+        z-index: 6;
+    }
+
+    &.bl4 {
+        bottom: 94%;
+        z-index: 5;
+    }
+
+    &.bl5 {
+        bottom: 95%;
+        z-index: 4;
+    }
+
+    &.bl6 {
+        bottom: 96%;
+        z-index: 3;
+    }
+
+    &.bl7 {
+        bottom: 97%;
+        z-index: 2;
+    }
+
+    &.bl8 {
+        bottom: 98%;
+        z-index: 1;
+    }
+
+    // 下道路
+    &.br1 {
+        bottom: 71%;
+        z-index: 18;
+    }
+
+    &.br2 {
+        bottom: 72%;
+        z-index: 17;
+    }
+
+    &.br3 {
+        bottom: 73%;
+        z-index: 16;
+    }
+
+    &.br4 {
+        bottom: 74%;
+        z-index: 15;
+    }
+
+    &.br5 {
+        bottom: 75%;
+        z-index: 14;
+    }
+
+    &.br6 {
+        bottom: 76%;
+        z-index: 13;
+    }
+
+    &.br7 {
+        bottom: 77%;
+        z-index: 12;
+    }
+
+    &.br8 {
+        bottom: 78%;
+        z-index: 11;
+    }
+
+    &.br9 {
+        bottom: 79%;
+        z-index: 10;
+    }
+
+    // 时间
+    &.t1 {
+        animation-duration: 1s;
+    }
+
+    &.t2 {
+        animation-duration: 2s;
+    }
+
+    &.t3 {
+        animation-duration: 3s;
+    }
+
+    &.t4 {
+        animation-duration: 4s;
+    }
+
+    &.t5 {
+        animation-duration: 5s;
+    }
+
+    &.t6 {
+        animation-duration: 6s;
+    }
+
+    &.t7 {
+        animation-duration: 7s;
+    }
+
+    &.t8 {
+        animation-duration: 8s;
+    }
 }
+
 .car-body {
-  width: 100%;
-  background-image: url(../img/part1/cars.png);
-  .shake(0.2s);
+    width: 100%;
+    background-image: url(../img/part1/cars.png);
+    .shake(0.2s);
 }
+
 .luntai {
-  position: absolute;
-  background-image: url(../img/part1/cars.png);
-  left: -350px;
-  .rotate(0.5s);
+    position: absolute;
+    background-image: url(../img/part1/cars.png);
+    left: -350px;
+    .rotate(0.5s);
 }
 
 #car1 {
-  .car-body {
-    height: 116px;
-  }
-  .luntai {
-    width: 54px;
-    height: 54px;
-    top: 90px;
-    background-position: -300px -423px;
-  }
-  .l1 {
-    left: 40px;
-  }
-  .l2 {
-    left: 215px;
-  }
+    .car-body {
+        height: 116px;
+    }
+
+    .luntai {
+        width: 54px;
+        height: 54px;
+        top: 90px;
+        background-position: -300px -423px;
+    }
+
+    .l1 {
+        left: 40px;
+    }
+
+    .l2 {
+        left: 215px;
+    }
 }
+
 #car2 {
-  .car-body {
-    height: 73px;
-    background-position: -300px 0;
-  }
-  .luntai {
-    width: 50px;
-    height: 50px;
-    top: 40px;
-    background-position: -354px -423px;
-  }
-  .l1 {
-    left: 30px;
-  }
-  .l2 {
-    left: 218px;
-  }
+    .car-body {
+        height: 73px;
+        background-position: -300px 0;
+    }
+
+    .luntai {
+        width: 50px;
+        height: 50px;
+        top: 40px;
+        background-position: -354px -423px;
+    }
+
+    .l1 {
+        left: 30px;
+    }
+
+    .l2 {
+        left: 218px;
+    }
 }
+
 #car3 {
-  .car-body {
-    height: 136px;
-    background-position: 0 -115px;
-  }
-  .luntai {
-    width: 50px;
-    height: 50px;
-    top: 108px;
-    background-position: -404px -423px;
-  }
-  .l1 {
-    left: 12px;
-  }
-  .l2 {
-    left: 72px;
-  }
-  .l3 {
-    left: 212px;
-  }
+    .car-body {
+        height: 136px;
+        background-position: 0 -115px;
+    }
+
+    .luntai {
+        width: 50px;
+        height: 50px;
+        top: 108px;
+        background-position: -404px -423px;
+    }
+
+    .l1 {
+        left: 12px;
+    }
+
+    .l2 {
+        left: 72px;
+    }
+
+    .l3 {
+        left: 212px;
+    }
 }
+
 #car4 {
-  .car-body {
-    height: 117px;
-    background-position: -300px -73px;
-  }
-  .luntai {
-    width: 45px;
-    height: 45px;
-    top: 97px;
-    background-position: -454px -423px;
-  }
-  .l1 {
-    left: 87px;
-  }
-  .l2 {
-    left: 222px;
-  }
+    .car-body {
+        height: 117px;
+        background-position: -300px -73px;
+    }
+
+    .luntai {
+        width: 45px;
+        height: 45px;
+        top: 97px;
+        background-position: -454px -423px;
+    }
+
+    .l1 {
+        left: 87px;
+    }
+
+    .l2 {
+        left: 222px;
+    }
 }
+
 #car5 {
-  .car-body {
-    height: 148px;
-    background-position: 0 -251px;
-  }
-  .luntai {
-    width: 70px;
-    height: 70px;
-    top: 110px;
-    background-position: -499px -423px;
-  }
-  .l1 {
-    left: 10px;
-  }
-  .l2 {
-    left: 210px;
-  }
+    .car-body {
+        height: 148px;
+        background-position: 0 -251px;
+    }
+
+    .luntai {
+        width: 70px;
+        height: 70px;
+        top: 110px;
+        background-position: -499px -423px;
+    }
+
+    .l1 {
+        left: 10px;
+    }
+
+    .l2 {
+        left: 210px;
+    }
 }
+
 #car6 {
-  .car-body {
-    height: 95px;
-    background-position: -300px -190px;
-  }
-  .luntai {
-    width: 44px;
-    height: 44px;
-    top: 80px;
-    background-position: -569px -423px;
-  }
-  .l1 {
-    left: 32px;
-  }
-  .l2 {
-    left: 220px;
-  }
+    .car-body {
+        height: 95px;
+        background-position: -300px -190px;
+    }
+
+    .luntai {
+        width: 44px;
+        height: 44px;
+        top: 80px;
+        background-position: -569px -423px;
+    }
+
+    .l1 {
+        left: 32px;
+    }
+
+    .l2 {
+        left: 220px;
+    }
 }
+
 #car7 {
-  .car-body {
-    height: 166px;
-    background-position: 0 -399px;
-  }
-  .luntai {
-    width: 50px;
-    height: 50px;
-    top: 145px;
-    background-position: -300px -477px;
-  }
-  .l1 {
-    left: 52px;
-  }
-  .l2 {
-    left: 112px;
-  }
-  .l3 {
-    left: 216px;
-  }
+    .car-body {
+        height: 166px;
+        background-position: 0 -399px;
+    }
+
+    .luntai {
+        width: 50px;
+        height: 50px;
+        top: 145px;
+        background-position: -300px -477px;
+    }
+
+    .l1 {
+        left: 52px;
+    }
+
+    .l2 {
+        left: 112px;
+    }
+
+    .l3 {
+        left: 216px;
+    }
 }
+
 #car8 {
-  .car-body {
-    height: 138px;
-    background-position: -300px -285px;
-  }
-  .luntai {
-    width: 68px;
-    height: 68px;
-    top: 105px;
-    background-position: -350px -477px;
-  }
-  .l1 {
-    left: 37px;
-  }
-  .l2 {
-    left: 177px;
-  }
+    .car-body {
+        height: 138px;
+        background-position: -300px -285px;
+    }
+
+    .luntai {
+        width: 68px;
+        height: 68px;
+        top: 105px;
+        background-position: -350px -477px;
+    }
+
+    .l1 {
+        left: 37px;
+    }
+
+    .l2 {
+        left: 177px;
+    }
 }
+
 //搭载人物汽车
 #car-wrapper {
-  position: absolute;
-  width: 192px;
-  height: 200px;
-  bottom: 29.5%;
-  left: 50%;
-  margin-left: -96px;
-  .ts(2s linear);
-  .tf(translate3D(-2000px, -150%, 0));
-  &.ac {
-    .tf(translate3D(0, -150%, 0));
-  }
+    position: absolute;
+    width: 154px;
+    height: 160px;
+    left: 50%;
+    margin-left: -77px;
+    bottom: 29.7%;
+    .ts(2s linear);
+    .tf(translate3D(-2000px, -150%, 0));
+
+    &.ac {
+        .tf(translate3D(0, -150%, 0));
+    }
 }
+
 #car-box {
-  position: absolute;
-  width: 470px;
-  height: 407px;
-  left: -132px;
-  top: 142px;
-  z-index: 9;
-  .ts(2s);
-  &.ac {
-    .tf(translateX(2000px));
-  }
+    position: absolute;
+    width: 376px;
+    height: 325px;
+    left: -111px;
+    top: 114px;
+    z-index: 9;
+    .ts(2s);
+
+    &.ac {
+        .tf(translateX(2000px));
+    }
 }
+
 .mainLuntai {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: 320px;
-  background-image: url(../img/part1/mainCar.png);
-  background-position: -480px 0;
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: 260px;
+    background-image: url(../img/part1/mainCar.png);
+    background-position: -384px 0;
 }
+
 #car-body {
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/part1/mainCar.png);
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/part1/mainCar.png);
 }
+
 #luntai1 {
-  left: 42px;
+    left: 34px;
 }
+
 #luntai2 {
-  left: 310px;
+    left: 250px;
 }
+
 //人物
 #manBox1 {
-  &.jump {
-    .tf(translateY(-50%));
-  }
-  &.down {
-    .tf(translateY(150%));
-  }
+    &.jump {
+        .tf(translateY(-50%));
+    }
+
+    &.down {
+        .tf(translateY(150%));
+    }
 }
+
 //对话框
 #dialog1 {
-  width: 640px;
-  margin-left: -350px;
-  bottom: 58%;
-  z-index: 5;
-  padding: 0 30px;
-  h2 {
-    margin-top: 8px;
-    font-size: 3.5rem;
-    text-align: center;
-  }
-  p {
-    margin-bottom: 20px;
-    text-align: justify;
-    text-indent: 2em;
-    font-size: 1.3rem;
-    line-height: 2.2em;
-  }
-  .ps {
-    display: block;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 2rem;
-  }
+    width: 640px;
+    margin-left: -350px;
+    bottom: 55%;
+    z-index: 5;
+    padding: 0 30px;
+
+    p {
+        text-indent: 2em;
+    }
+
+    .ps {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        padding-top: 10px;
+    }
 }
+
 // 三角
 #triangle {
-  width: 0;
-  height: 0;
-  position: absolute;
-  border: 10px solid transparent;
-  border-top: 10px solid rgba(255, 255, 255, .6);
-  left: 50%;
-  margin-left: -15px;
-  bottom: -20px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, .6);
+    left: 50%;
+    margin-left: -15px;
+    bottom: -20px;
 }
+
 // 非ie
 #notIE {
-  color: #d3272d;
+    display: inline-block;
+    padding-top: 10px;
+    color: #d3272d;
 }
+
 //下箭头
 #arrow-down {
-  position: absolute;
-  width: 80px;
-  height: 130px;
-  background-image: url(../img/globel.png);
-  background-position: -140px -124px;
-  left: 50%;
-  bottom: 22px;
-  margin-left: -40px;
-  display: none;
-  &.ac {
-    display: block;
-    animation: arrow 1s linear infinite;
-    -webkit-animation: arrow 1s linear infinite;
-  }
+    position: absolute;
+    width: 72px;
+    height: 126px;
+    background-image: url(../img/globel.png);
+    background-position: -126px -112px;
+    left: 50%;
+    bottom: 22px;
+    margin-left: -40px;
+    display: none;
+
+    &.ac {
+        display: block;
+        animation: arrow 1s linear infinite;
+        -webkit-animation: arrow 1s linear infinite;
+    }
 }

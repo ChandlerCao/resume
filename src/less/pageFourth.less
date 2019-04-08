@@ -1,218 +1,271 @@
 @import url(cdj.less);
+
 //canvas
 #snow-canvas {
-  position: absolute;
+    position: absolute;
 }
+
 //雪地
 #snow-ground {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  top: 70%;
-  background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 70%;
+    background-color: #fff;
 }
+
 //雪地道路
 #snow-road {
-  position: absolute;
-  width: 100%;
-  height: 5%;
-  top: 10%;
-  background-color: #C6ACA7;
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    top: 10%;
+    background-color: #C6ACA7;
 }
+
 //房子
 #snow-house {
-  position: absolute;
-  width: 100%;
-  height: 40%;
-  background-image: url(../img/part4/snowHouse.png);
-  background-size: auto 100%;
-  bottom: 30%;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    background-image: url(../img/part4/snowHouse.png);
+    background-size: auto 100%;
+    bottom: 30%;
 }
+
 //作品
 #work-box {
-  position: absolute;
-  width: 1200px;
-  height: 217px;
-  left: 50%;
-  margin-left: -600px;
-  bottom: 28%;
+    position: absolute;
+    width: 1200px;
+    height: 217px;
+    left: 50%;
+    margin-left: -600px;
+    zoom: 0.9;
+    bottom: 26%;
 }
+
 .work-item {
-  width: 200px;
-  height: 100%;
-  padding: 0 20px;
-  float: left;
-  .ts(0.5s);
-  .tf(translateY(-1000px));
-  &.ac {
-    .tf(translateY(0));
-  }
-  &:nth-of-type(2) {
-    transition-delay: .15s;
-  }
-  &:nth-of-type(3) {
-    transition-delay: .3s;
-  }
-  &:nth-of-type(4) {
-    transition-delay: .45s;
-  }
-  &:nth-of-type(5) {
-    transition-delay: .6s;
-  }
+    width: 200px;
+    height: 100%;
+    padding: 0 20px;
+    float: left;
+    .ts(0.5s);
+    .tf(translateY(-1000px));
+
+    &.ac {
+        .tf(translateY(0));
+    }
+
+    &:nth-of-type(2) {
+        transition-delay: .15s;
+    }
+
+    &:nth-of-type(3) {
+        transition-delay: .3s;
+    }
+
+    &:nth-of-type(4) {
+        transition-delay: .45s;
+    }
+
+    &:nth-of-type(5) {
+        transition-delay: .6s;
+    }
 }
+
 .work-link {
-  display: block;
-  width: 100%;
-  height: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
+
 // 道路板
 .bracket {
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/part4/page4.png);
-  background-position: 0 -100px;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/part4/page4.png);
+    background-position: 0 -100px;
+    position: relative;
 }
+
 // 作品和蒙版包裹层
 .sign-wrapper {
-  position: absolute;
-  width: 171px;
-  height: 108px;
-  left: 14px;
-  top: 25px;
+    position: absolute;
+    width: 171px;
+    height: 108px;
+    left: 14px;
+    top: 25px;
 }
+
 // 作品和布
-.sign-box, .work-box {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  .ts(0.5s);
-  .tf(scale(0) rotate(500deg));
-  &.delay {
-    transition-delay: 0.3s;
-  }
-  &.ac {
-    .tf(scale(1) rotate(0));
-    opacity: 1;
-  }
+.sign-box,
+.work-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .ts(0.5s);
+    .tf(scale(0) rotate(500deg));
+
+    &.delay {
+        transition-delay: 0.3s;
+    }
+
+    &.ac {
+        .tf(scale(1) rotate(0));
+        opacity: 1;
+    }
 }
+
 // 布
 .sign-box {
-  background-image: url(../img/part4/page4.png);
-  background-position: -200px -100px;
-  text-align: center;
-  color: #033;
+    background-image: url(../img/part4/page4.png);
+    background-position: -200px -100px;
+    text-align: center;
+    color: #033;
 }
+
 // 作品截图
 .work-box {
-  background-image: url(../img/part4/page4.png);
-  background-position: -200px -100px;
+    background-image: url(../img/part4/page4.png);
+    background-position: -200px -100px;
 }
+
 // 作品名称
 .work-name {
-  font-size: 1.5rem;
-  margin-top: 18px;
-  margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-top: 18px;
+    margin-bottom: 10px;
 }
+
 .work-des {
-  padding: 0 15px;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
+    padding: 0 15px;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
 }
+
 // 人物
 #manBox3 {
-  position: absolute;
-  .ts(1s);
-  left: -500px;
-  bottom: 80%;
+    position: absolute;
+    .ts(1s);
+    left: -500px;
+    bottom: 80%;
 }
+
 //字母
 #word-box {
-  position: absolute;
-  width: 828px;
-  left: 50%;
-  margin-left: -414px;
-  margin-top: 6%;
-  .ts(1s linear);
-  .origin(left);
-  .tf(translateY(-500px));
-  &.ac {
-    .tf(translateY(0));
-  }
+    position: absolute;
+    width: 828px;
+    left: 50%;
+    margin-left: -319px;
+    margin-top: 6%;
+    .ts(1s linear);
+    .origin(left);
+    .tf(translateY(-500px) scale(0.8));
+
+    &.ac {
+        .tf(translateY(0) scale(0.8));
+    }
 }
+
 .word-item {
-  float: left;
-  height: 100px;
-  background-image: url(../img/part4/page4.png);
-  background-repeat: no-repeat;
-  animation: bounce 0.5s infinite alternate;
-  &:nth-of-type(1) { //t
-    width: 62px;
-  }
-  &:nth-of-type(2) { //h
-    width: 63px;
-    background-position: -62px 0;
-    animation-delay: 50ms;
-  }
-  &:nth-of-type(3) { //i
-    width: 29px;
-    background-position: -125px 0;
-    animation-delay: 100ms;
-  }
-  &:nth-of-type(4) { //s
-    width: 62px;
-    background-position: -154px 0;
-    animation-delay: 150ms;
-  }
-  &:nth-of-type(5) { //i
-    width: 29px;
-    background-position: -125px 0;
-    animation-delay: 200ms;
-    margin-left: 30px;
-  }
-  &:nth-of-type(6) { //s
-    width: 62px;
-    background-position: -154px 0;
-    animation-delay: 250ms;
-  }
-  &:nth-of-type(7) { //m
-    width: 77px;
-    background-position: -216px 0;
-    animation-delay: 300ms;
-    margin-left: 30px;
-  }
-  &:nth-of-type(8) { //y
-    width: 67px;
-    background-position: -293px 0;
-    animation-delay: 350ms;
-  }
-  &:nth-of-type(9) { //w
-    width: 85px;
-    background-position: -360px 0;
-    animation-delay: 400ms;
-    margin-left: 30px;
-  }
-  &:nth-of-type(10) { //o
-    width: 69px;
-    background-position: -445px 0;
-    animation-delay: 450ms;
-  }
-  &:nth-of-type(11) { //r
-    width: 66px;
-    background-position: -514px 0;
-    animation-delay: 500ms;
-  }
-  &:nth-of-type(12) { //k
-    width: 67px;
-    background-position: -580px 0;
-    animation-delay: 550ms;
-  }
+    float: left;
+    height: 100px;
+    background-image: url(../img/part4/page4.png);
+    background-repeat: no-repeat;
+    animation: bounce 0.5s infinite alternate;
+
+    &:nth-of-type(1) {
+        //t
+        width: 62px;
+    }
+
+    &:nth-of-type(2) {
+        //h
+        width: 63px;
+        background-position: -62px 0;
+        animation-delay: 50ms;
+    }
+
+    &:nth-of-type(3) {
+        //i
+        width: 29px;
+        background-position: -125px 0;
+        animation-delay: 100ms;
+    }
+
+    &:nth-of-type(4) {
+        //s
+        width: 62px;
+        background-position: -154px 0;
+        animation-delay: 150ms;
+    }
+
+    &:nth-of-type(5) {
+        //i
+        width: 29px;
+        background-position: -125px 0;
+        animation-delay: 200ms;
+        margin-left: 30px;
+    }
+
+    &:nth-of-type(6) {
+        //s
+        width: 62px;
+        background-position: -154px 0;
+        animation-delay: 250ms;
+    }
+
+    &:nth-of-type(7) {
+        //m
+        width: 77px;
+        background-position: -216px 0;
+        animation-delay: 300ms;
+        margin-left: 30px;
+    }
+
+    &:nth-of-type(8) {
+        //y
+        width: 67px;
+        background-position: -293px 0;
+        animation-delay: 350ms;
+    }
+
+    &:nth-of-type(9) {
+        //w
+        width: 85px;
+        background-position: -360px 0;
+        animation-delay: 400ms;
+        margin-left: 30px;
+    }
+
+    &:nth-of-type(10) {
+        //o
+        width: 69px;
+        background-position: -445px 0;
+        animation-delay: 450ms;
+    }
+
+    &:nth-of-type(11) {
+        //r
+        width: 66px;
+        background-position: -514px 0;
+        animation-delay: 500ms;
+    }
+
+    &:nth-of-type(12) {
+        //k
+        width: 67px;
+        background-position: -580px 0;
+        animation-delay: 550ms;
+    }
 }
+
 @keyframes bounce {
-  0% { 
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-30px);
-  }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
 }

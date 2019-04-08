@@ -1,28 +1,30 @@
 @import url(cdj.less);
-#pageThird > *{
-	position: absolute;
+
+#pageThird>* {
+    position: absolute;
 }
 
 
 //各种海洋生物
 #bg {
-	width: 100%;
-	height: 40%;
-	background-image: url(../img/part3/bg.png);
-	background-size: cover;
-	bottom: 0;
+    width: 100%;
+    height: 40%;
+    background-image: url(../img/part3/bg.png);
+    background-size: cover;
+    bottom: 0;
 }
+
 //光束
 #light {
-	width: 70%;
-	height: 100%;
-	background-image: url(../img/part3/light.png);
-	background-size: 100% 100%;
+    width: 70%;
+    height: 100%;
+    background-image: url(../img/part3/light.png);
+    background-size: 100% 100%;
 }
 
 //经历
 #experience {
-	position: absolute;
+    position: absolute;
     width: 80%;
     height: 50%;
     max-height: 50%;
@@ -31,189 +33,229 @@
     margin-left: -40%;
     z-index: 5;
     padding: 20px;
-	overflow-y: auto;
-	overflow-x: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
 .ex-item {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
+
 // 工作开始日期
 .ex-date {
-	float: left;
-	margin-top: 60px;
+    float: left;
+    margin-top: 60px;
 }
+
 // 工作描述
 .ex-des {
-	float: right;
-	width: 40%;
+    float: right;
+    width: 40%;
 	box-sizing: border-box;
-	padding: 20px 30px;
-	background-color: rgba(230, 230, 230, 0.6);
-  	border-radius: 40px;
-  	color: #000;
-  	text-align: center;
-	.ts(2s cubic-bezier(0.42, 1.91, 1, 0.91));
-	.tf(translateX(1000px));
-	&.ac {
-		.tf(translateX(0));
-	}
+	padding-top: 20px;
+	padding-bottom: 10px;
+    background-color: rgba(230, 230, 230, 0.6);
+    border-radius: 30px;
+    color: #000;
+    text-align: center;
+    .ts(2s cubic-bezier(0.42, 1.91, 1, 0.91));
+    .tf(translateX(1000px));
+
+    &.ac {
+        .tf(translateX(0));
+    }
 }
+
 .ex-des-title {
-	font-size: 2.5rem;
-	margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
+
 .ex-des-text {
-	font-size: 1.2rem;
-	margin-bottom: 5px;
+    font-size: 14px;
+    padding-bottom: 10px;
 }
+
 .ex-date-num {
-	display: inline-block;
-	vertical-align: top;
-	background-image: url(../img/part3/nums.png);
-	background-size: cover;
-	height: 60px;
-	transition: 1s cubic-bezier(0.42, 1.91, 1, 0.91);
-	.tf(translateX(-1000px));
-	&.ac {
-		.tf(translateX(0));
-	}
-	&.zero {
-		width: 47px;
-		background-position: 0 0;
-	}
-	&.one {
-		width: 32px;
-		background-position: -47px 0;
-	}
-	&.two {
-		width: 41px;
-		background-position: -79px 0;
-	}
-	&.three {
-		width: 46px;
-		background-position: -120px 0;
-	}
-	&.four {
-		background-position: 0 0;
-	}
-	&.five {
-		width: 47px;
-		background-position: -166px 0;
-	}
-	&.six {
-		background-position: 0 0;
-	}
-	&.seven {
-		width: 46px;
-		background-position: -213px 0;
-	}
-	&.eight {
-		background-position: 0 0;
-	}
-	&.nine {
-		width: 43px;
-		background-position: -259px 0;
-	}
-	&.line {
-		width: 42px;
-		background-position: -302px 0;
-	}
-	&.delay1 {
-		transition-delay: 0.1s;
-	}
-	&.delay2 {
-		transition-delay: 0.3s;
-	}
-	&.delay3 {
-		transition-delay: 0.3s;
-	}
-	&.delay4 {
-		transition-delay: 0.4s;
-	}
-	&.delay5 {
-		transition-delay: 0.5s;
-	}
-	&.delay6 {
-		transition-delay: 0.6s;
-	}
-	&.delay7 {
-		transition-delay: 0.7s;
-	}
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(../img/part3/nums.png);
+    background-size: cover;
+    height: 60px;
+    transition: 1s cubic-bezier(0.42, 1.91, 1, 0.91);
+    .tf(translateX(-1000px));
+
+    &.ac {
+        .tf(translateX(0));
+    }
+
+    &.zero {
+        width: 47px;
+        background-position: 0 0;
+    }
+
+    &.one {
+        width: 32px;
+        background-position: -47px 0;
+    }
+
+    &.two {
+        width: 41px;
+        background-position: -79px 0;
+    }
+
+    &.three {
+        width: 46px;
+        background-position: -120px 0;
+    }
+
+    &.four {
+        background-position: 0 0;
+    }
+
+    &.five {
+        width: 47px;
+        background-position: -166px 0;
+    }
+
+    &.six {
+        background-position: 0 0;
+    }
+
+    &.seven {
+        width: 46px;
+        background-position: -213px 0;
+    }
+
+    &.eight {
+        background-position: 0 0;
+    }
+
+    &.nine {
+        width: 43px;
+        background-position: -259px 0;
+    }
+
+    &.line {
+        width: 42px;
+        background-position: -302px 0;
+    }
+
+    &.delay1 {
+        transition-delay: 0.1s;
+    }
+
+    &.delay2 {
+        transition-delay: 0.3s;
+    }
+
+    &.delay3 {
+        transition-delay: 0.3s;
+    }
+
+    &.delay4 {
+        transition-delay: 0.4s;
+    }
+
+    &.delay5 {
+        transition-delay: 0.5s;
+    }
+
+    &.delay6 {
+        transition-delay: 0.6s;
+    }
+
+    &.delay7 {
+        transition-delay: 0.7s;
+    }
 }
 
 //潜水艇
 #submarine-box {
-	width: 300px;
-	height: 287px;
-	left: 50%;
-	margin-left: -150px;
-	bottom: 15%;
-	transform-style: preserve-3d;
-	perspective: 10000px;
-	.ts(2s);
-	.tf(translateX(-1000px));
-	&.ac {
-		.tf(translateX(0));
-	}
+    width: 300px;
+    height: 287px;
+    left: 50%;
+    margin-left: -150px;
+    bottom: 15%;
+    transform-style: preserve-3d;
+    perspective: 10000px;
+    .ts(2s);
+    .tf(translateX(-1000px));
+
+    &.ac {
+        .tf(translateX(0));
+    }
 }
+
 // 螺旋桨
 #propeller {
-	position: absolute;
-	width: 48px;
-	height: 176px;
-	left: 0;
-	top: 107px;
-	background-image: url(../img/part3/submarine.png);
-	background-position: 0 -111px;
-	animation: propellerRotate 0.15s linear infinite;
-	-webkit-animation: propellerRotate 0.15s linear infinite;
+    position: absolute;
+    width: 48px;
+    height: 176px;
+    left: 0;
+    top: 107px;
+    background-image: url(../img/part3/submarine.png);
+    background-position: 0 -111px;
+    animation: propellerRotate 0.15s linear infinite;
+    -webkit-animation: propellerRotate 0.15s linear infinite;
 }
+
 #submarine {
-	position: absolute;
-	width: 252px;
-	height: 287px;
-	background-image: url(../img/part3/submarine.png);
-	background-position: -48px 0;
-	top: 0;
-	right: 0;
+    position: absolute;
+    width: 252px;
+    height: 287px;
+    background-image: url(../img/part3/submarine.png);
+    background-position: -48px 0;
+    top: 0;
+    right: 0;
 }
+
 @-webkit-keyframes propellerRotate {
-	0% {
-		-webkit-transform: rotateX(0);
-	}
-	100% {
-		-webkit-transform: rotateX(360deg);
-	}
+    0% {
+        -webkit-transform: rotateX(0);
+    }
+
+    100% {
+        -webkit-transform: rotateX(360deg);
+    }
 }
+
 @-moz-keyframes propellerRotate {
-	0% {
-		-moz-transform: rotateX(0);
-	}
-	100% {
-		-moz-transform: rotateX(360deg);
-	}
+    0% {
+        -moz-transform: rotateX(0);
+    }
+
+    100% {
+        -moz-transform: rotateX(360deg);
+    }
 }
+
 @-ms-keyframes propellerRotate {
-	0% {
-		-ms-transform: rotateX(0);
-	}
-	100% {
-		-ms-transform: rotateX(360deg);
-	}
+    0% {
+        -ms-transform: rotateX(0);
+    }
+
+    100% {
+        -ms-transform: rotateX(360deg);
+    }
 }
+
 @-o-keyframes propellerRotate {
-	0% {
-		-o-transform: rotateX(0);
-	}
-	100% {
-		-o-transform: rotateX(360deg);
-	}
+    0% {
+        -o-transform: rotateX(0);
+    }
+
+    100% {
+        -o-transform: rotateX(360deg);
+    }
 }
+
 @keyframes propellerRotate {
-	0% {
-		transform: rotateX(0);
-	}
-	100% {
-		transform: rotateX(360deg);
-	}
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
 }

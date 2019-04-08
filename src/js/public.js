@@ -7,13 +7,11 @@ function random(x) {
 };
 class timeout {
     constructor() {
-        this.time = 0;
         this.timer = null;
         this.arr = [];
         this.index = 0;
-        this.over = false;
     }
-    to(fn, time = 0) {
+    to(fn = () => { }, time = 0) {
         // 将所有运动的函数全部载入
         this.arr.push({
             fn,
@@ -45,12 +43,12 @@ const obj = {
         w: $(win).width(),
         h: $(win).height()
     },
-    move: function(obj) {
+    move: function (obj) {
         clearTimeout(timer);
         //获取所有要运动的对象
         let arr = [];
         let timer = null;
-        obj.each(function(index, el) {
+        obj.each(function (index, el) {
             arr.push($(el));
             //运动完成要执行的函数
             $(el).bind("animationEnd webkitAnimationEnd", animateComplete);
@@ -81,7 +79,7 @@ const obj = {
                 // 添加class
                 moveObj.addClass(className).prop('csName', className);
             }
-            timer = setTimeout(function() {
+            timer = setTimeout(function () {
                 requestAnimationFrame(carMove);
             }, 4000);
         };
@@ -91,9 +89,9 @@ const obj = {
         };
         return {
             start: carMove,
-            pause: function() {
+            pause: function () {
                 clearTimeout(timer);
-                obj.each(function(index, el) {
+                obj.each(function (index, el) {
                     // 把运动中的车全部清除
                     if ($(el).prop('isAnimated')) $(el).removeClass($(el).prop('csName')).prop('isAnimated', false);
                 });
@@ -101,7 +99,7 @@ const obj = {
         };
     },
     timeout: timeout,
-    hash: function(hash) {
+    hash: function (hash) {
         // 如果传入了hash值
         if (hash) {
             if (hash === 'page1' || hash === 'page2' || hash === 'page3' || hash === 'page4' || hash === 'page5') {
@@ -143,7 +141,7 @@ const obj = {
             }
         }
     },
-    canvas: function(obj) {
+    canvas: function (obj) {
         const _this = this;
         let timer = null;
         //canvas雪花
