@@ -51,7 +51,7 @@ function show(fn = () => { }) {
             .to(function () {
                 // 小球放大
                 ball.text('').addClass('ac');
-            }, 100)
+            }, 30)
             .to(function () {
                 // 背景出现
                 bg.addClass('ac');
