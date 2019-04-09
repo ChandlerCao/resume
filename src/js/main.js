@@ -37,10 +37,11 @@ require('./startAni')(function () {
     })[0].className = 'page' + index;
     // 绑定导航点击事件
     navA.click(function () {
-        index = navA.index($(this));
-        if (index === prev) return;
+        const nowIndex = navA.index($(this));
+        if (nowIndex === prev) return;
         if (b) {
             b = false;
+            index = nowIndex;
             change();
         }
     });
