@@ -43,7 +43,7 @@ function show(fn = () => { }) {
     );
     // 图片加载完成，执行函数
     function go() {
-        const pub = require('./public');
+        const pub = require('./utils');
         const t = new pub.timeout();
         t.to(function () {
             ball.removeClass('ballShake');

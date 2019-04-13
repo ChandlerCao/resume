@@ -10,7 +10,7 @@ const exDes = $('.ex-des');
 // 获取潜水艇
 const submarine = $('#submarine-box');
 
-const water = require('./public').canvas({
+const water = require('./utils').canvas({
 	el: $('#water-canvas'),
 	dir: 'up',
 	len: 20

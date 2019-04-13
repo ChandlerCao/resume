@@ -35,8 +35,8 @@ beeTitle.hover(function () {
     $(this).removeClass('rubberBand animated')
 });
 /* beeTitle和蜜蜂鼠标移入 */
-const pub = require('./public');
-const t = new pub.timeout();
+const utils = require('./utils');
+const t = new utils.timeout();
 function beeMove() {
     nowHb.addClass('jello animated');
     // 蜜蜂的显示

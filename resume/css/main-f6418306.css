@@ -638,10 +638,10 @@ em {
   background-position: 0 -800px;
 }
 .man.bp7 {
-  background-position: 0 -1126px;
+  background-position: 0 -1124px;
 }
 .man.bp8 {
-  background-position: 0 -1280px;
+  background-position: 0 -1283px;
 }
 .dialogBox {
   position: absolute;
@@ -2091,7 +2091,7 @@ em {
   left: 50%;
   margin-left: -600px;
   zoom: 0.9;
-  bottom: 26%;
+  bottom: 28%;
 }
 .work-item {
   width: 200px;
@@ -2112,30 +2112,52 @@ em {
        -o-transform: translateY(0);
           transform: translateY(0);
 }
+.work-item:nth-of-type(1) .work-box {
+  background-image: url(../img/work1.png);
+}
 .work-item:nth-of-type(2) {
   -webkit-transition-delay: 0.15s;
        -o-transition-delay: 0.15s;
           transition-delay: 0.15s;
+}
+.work-item:nth-of-type(2) .work-box {
+  background-image: url(../img/page4.png);
+  background-position: -200px -100px;
 }
 .work-item:nth-of-type(3) {
   -webkit-transition-delay: 0.3s;
        -o-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
+.work-item:nth-of-type(3) .work-box {
+  background-image: url(../img/page4.png);
+  background-position: -200px -100px;
+}
 .work-item:nth-of-type(4) {
   -webkit-transition-delay: 0.45s;
        -o-transition-delay: 0.45s;
           transition-delay: 0.45s;
+}
+.work-item:nth-of-type(4) .work-box {
+  background-image: url(../img/page4.png);
+  background-position: -200px -100px;
 }
 .work-item:nth-of-type(5) {
   -webkit-transition-delay: 0.6s;
        -o-transition-delay: 0.6s;
           transition-delay: 0.6s;
 }
+.work-item:nth-of-type(5) .work-box {
+  background-image: url(../img/page4.png);
+  background-position: -200px -100px;
+}
 .work-link {
   display: block;
   width: 100%;
   height: 100%;
+}
+.work-box {
+  background-size: cover;
 }
 .bracket {
   width: 100%;
@@ -2183,10 +2205,6 @@ em {
   background-position: -200px -100px;
   text-align: center;
   color: #033;
-}
-.work-box {
-  background-image: url(../img/page4.png);
-  background-position: -200px -100px;
 }
 .work-name {
   font-size: 1.5rem;
@@ -2808,7 +2826,7 @@ em {
   font-size: 16px;
 }
 #mobile .contact-info:after {
-  content: '166-0231-5767';
+  content: '150-2561-8279';
 }
 #me1 .contact-info {
   width: 149px;
@@ -2835,10 +2853,10 @@ em {
           transform-style: preserve-3d;
 }
 #plane-box.ac {
-  -webkit-transform: translateX(130vw);
-      -ms-transform: translateX(130vw);
-       -o-transform: translateX(130vw);
-          transform: translateX(130vw);
+  -webkit-transform: translateX(131vw);
+      -ms-transform: translateX(131vw);
+       -o-transform: translateX(131vw);
+          transform: translateX(131vw);
 }
 #plane {
   width: 100%;
@@ -2921,7 +2939,7 @@ em {
   opacity: 0;
 }
 #parachute {
-  left: -10px;
+  left: -25px;
   top: -150px;
 }
 .beian {

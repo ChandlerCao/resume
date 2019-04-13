@@ -21,16 +21,15 @@ class timeout {
     }
     start() {
         var _this = this;
-        if (_this.over) return;
+        if (_this.index === _this.arr.length) return;
         // 定时器
         _this.pause();
+        console.log(_this.arr[_this.index].time);
         _this.timer = setTimeout(() => {
             requestAnimationFrame(_this.arr[_this.index].fn);
             _this.index++;
-            if (_this.index === _this.arr.length) {
-                _this.over = true;
-                _this.pause();
-            } else _this.start();
+            if (_this.index === _this.arr.length) _this.pause();
+            else _this.start();
             // 时间递增
         }, _this.arr[_this.index].time);
     }
@@ -66,7 +65,7 @@ const obj = {
             while (moveObj.prop('isAnimated')) {
                 moveObj = arr[Math.floor(Math.random() * len)];
             };
-            //正在运动的汽车的isAnimated为1
+            //正在运动的汽车的isAnimated为true
             moveObj.prop('isAnimated', true);
             if (Math.random() > 0.5) {
                 // 计算当前class
@@ -99,48 +98,7 @@ const obj = {
         };
     },
     timeout: timeout,
-    hash: function (hash) {
-        // 如果传入了hash值
-        if (hash) {
-            if (hash === 'page1' || hash === 'page2' || hash === 'page3' || hash === 'page4' || hash === 'page5') {
-                win.location.hash = hash;
-            } else {
-                win.location.hash = 'page1';
-            }
-        }
-        // 如果没有传入hash值
-        else {
-            // 判断浏览器是否有hash值
-            let [hash, num] = [win.location.hash, 0];
-            hash = hash.substr(1, hash.length);
-            if (hash) {
-                switch (hash) {
-                    case 'page1':
-                        num = 0;
-                        break;
-                    case 'page2':
-                        num = 1;
-                        break;
-                    case 'page3':
-                        num = 2;
-                        break;
-                    case 'page4':
-                        num = 3;
-                        break;
-                    case 'page5':
-                        num = 4;
-                        break;
-                    default:
-                        hash = 'page1';
-                        num = 0;
-                };
-                return num;
-            } else {
-                window.location.hash = 'page1';
-                return 0;
-            }
-        }
-    },
+    // 雪花
     canvas: function (obj) {
         const _this = this;
         let timer = null;
@@ -209,4 +167,9 @@ const obj = {
         };
     }
 };
+// requestAnimationFrame兼容
+; (function () {
+    win.requestAnimationFrame = win.requestAnimationFrame || win.mozRequestAnimationFrame || win.webkitRequestAnimationFrame || win.msRequestAnimationFrame;
+    win.cancelAnimationFrame = win.cancelAnimationFrame || win.mozCancelAnimationFrame || win.msCancelAnimationFrame;
+})();
 module.exports = obj;

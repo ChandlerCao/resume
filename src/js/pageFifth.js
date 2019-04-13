@@ -9,11 +9,11 @@ const manBox = $('#manBox5');
 const man = manBox.find('.man:first');
 // 获取降落伞
 const parachute = $('.parachute');
-const pub = require('./public');
+const utils = require('./utils');
 // 汽车发车
-const boatAniFn = pub.move($('.boat'));
+const boatAniFn = utils.move($('.boat'));
 // 定义t
-const t = new pub.timeout();
+const t = new utils.timeout();
 t.to(function () {
 	// 飞机飞过来
 	plane.addClass('ac');

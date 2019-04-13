@@ -44,7 +44,7 @@ require('./startAni')(function () {
             index = nowIndex;
             change();
         }
-    });
+    }).eq(index).addClass('hover');
     swiperBox.bind('transitionend webkitTransitionend', function (e) {
         if (e.target === this) {
             if (!arr[index]) arr[index] = requirePart(index); // 如果没有导入过当前函数，就导入
