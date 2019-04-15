@@ -62,7 +62,7 @@ function list(i) {
     nowHb = honeybee.eq(i);
     requestAnimationFrame(move);
 };
-// 热气球起飞
+// 热气球
 hot.removeClass('pause');
 t.to(function () {
     // title和蜜蜂缩放到1
