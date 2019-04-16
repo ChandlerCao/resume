@@ -24,7 +24,6 @@ class timeout {
         if (_this.index === _this.arr.length) return;
         // 定时器
         _this.pause();
-        console.log(_this.arr[_this.index].time);
         _this.timer = setTimeout(() => {
             requestAnimationFrame(_this.arr[_this.index].fn);
             _this.index++;
@@ -45,39 +44,35 @@ const obj = {
     move: function (obj) {
         clearTimeout(timer);
         //获取所有要运动的对象
-        let arr = [];
+        let moveArr = [];
         let timer = null;
         obj.each(function (index, el) {
-            arr.push($(el));
+            moveArr.push($(el));
             //运动完成要执行的函数
             $(el).bind("animationEnd webkitAnimationEnd", animateComplete);
         });
         //获取运动元素数量
-        const len = arr.length;
-        //正在运动的对象
-        let moveObj = null;
-        // 定义当前className
-        let className = '';
+        const len = moveArr.length;
+        const moveStyle = {
+            dir: ['left', 'right'],
+            time: ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8'],
+            pos: [['bl1', 'bl2', 'bl3', 'bl4', 'bl5', 'bl6', 'bl7', 'bl8'], ['br1', 'br2', 'br3', 'br4', 'br5', 'br6', 'br7', 'br8']]
+        }
         //汽车随机运动
         function carMove() {
             clearTimeout(timer);
-            moveObj = arr[Math.floor(Math.random() * len)];
+            let moveObj = moveArr[Math.floor(Math.random() * len)];
             while (moveObj.prop('isAnimated')) {
-                moveObj = arr[Math.floor(Math.random() * len)];
+                moveObj = moveArr[Math.floor(Math.random() * len)];
             };
             //正在运动的汽车的isAnimated为true
             moveObj.prop('isAnimated', true);
-            if (Math.random() > 0.5) {
-                // 计算当前class
-                className = 'left t' + Math.ceil(Math.random() * 8) + ' bl' + Math.ceil(Math.random() * 8);
-                // 添加class
-                moveObj.addClass(className).prop('csName', className);
-            } else {
-                // 计算当前class
-                className = 'right t' + Math.ceil(Math.random() * 8) + ' br' + Math.ceil(Math.random() * 9);
-                // 添加class
-                moveObj.addClass(className).prop('csName', className);
-            }
+
+            // 来个55开，判断想左还是向右
+            const dirNum = Math.round(Math.random()); // 0或1
+            const className = `${moveStyle.dir[dirNum]} ${moveStyle.time[Math.ceil(Math.random() * 8)]} ${moveStyle.pos[dirNum][Math.ceil(Math.random() * 7)]}`;
+            // 添加class
+            moveObj.addClass(className).prop('csName', className);
             timer = setTimeout(function () {
                 requestAnimationFrame(carMove);
             }, 4000);
